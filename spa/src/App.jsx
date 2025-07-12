@@ -1,12 +1,8 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React from 'react';
+import SettingsPage from './Pages/index';
 
-const App = () => (
-  <div>
-    <h1>Rapid CRM Admin</h1>
-    <p>React loaded from plugin root.</p>
-  </div>
-);
+const App = () => {
+  return <SettingsPage />;
+};
 
-const root = ReactDOM.createRoot(document.getElementById("rapid-crm-root"));
-root.render(<App />);
+export default App;
