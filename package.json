@@ -1,5 +1,5 @@
 {
-  "name": "rapid-crm-ui",
+  "name": "rapid-crm",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
@@ -8,8 +8,14 @@
     "react-scripts": "5.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "watch": "react-scripts build --watch"
+    "start": "webpack serve --config webpack.config.js",
+    "build": "webpack --config webpack.config.js",
+    "watch": "webpack --watch"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@babel/preset-react": "^7.27.1",
+    "babel-loader": "^10.0.0"
   }
 }

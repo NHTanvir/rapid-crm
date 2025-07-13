@@ -25,11 +25,12 @@ class SettingsPage {
 
 		wp_enqueue_script(
 			'rapidcrm-admin-settings',
-			plugins_url('/assets/js/admin-settings.js', \RAPIDCRM_FILE),
+			RAPIDCRM_PLUGIN_URL . 'build/rapidcrm.bundle.js',
 			[],
-			filemtime(plugin_dir_path(\RAPIDCRM_FILE) . 'assets/js/admin-settings.js'),
+			time(),
 			true
-		);
+		  );
+		  
 	}
 
 	public function render() {
