@@ -8,7 +8,8 @@
   },
   "autoload": {
     "psr-4": {
-      "RapidCRM\\": "app/"
+      "RapidCRM\\": "app/",
+      "RapidCRM\\Database\\": "config/"
     }
   },
     "authors": [

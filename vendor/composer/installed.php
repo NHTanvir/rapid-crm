@@ -3,7 +3,7 @@
         'name' => 'rapidcrm/rapid-crm',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '5d99dc732fb5ad79687bdc56278902717e4ad17a',
+        'reference' => 'd9317f148c46b830f5d11e29af916b348032d7e8',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'rapidcrm/rapid-crm' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '5d99dc732fb5ad79687bdc56278902717e4ad17a',
+            'reference' => 'd9317f148c46b830f5d11e29af916b348032d7e8',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

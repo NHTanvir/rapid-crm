@@ -9,11 +9,16 @@ class ComposerStaticInit2d95a9db92cf33530f7008c1f6151fab
     public static $prefixLengthsPsr4 = array (
         'R' => 
         array (
+            'RapidCRM\\Database\\' => 18,
             'RapidCRM\\' => 9,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'RapidCRM\\Database\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/config',
+        ),
         'RapidCRM\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',

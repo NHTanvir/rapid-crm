@@ -6,5 +6,6 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'RapidCRM\\Database\\' => array($baseDir . '/config'),
     'RapidCRM\\' => array($baseDir . '/app'),
 );
