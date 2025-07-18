@@ -10,7 +10,8 @@
     "psr-4": {
       "RapidCRM\\": "app/",
       "RapidCRM\\Database\\": "config/"
-    }
+    },
+      "files": [ "inc/functions.php" ]
   },
     "authors": [
     {
