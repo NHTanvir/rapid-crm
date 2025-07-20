@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SettingsPage = () => {
+const Dashboard = () => {
   return (
     <div>
       <h2>RapidCRM Settings</h2>
@@ -9,4 +9,4 @@ const SettingsPage = () => {
   );
 };
 
-export default SettingsPage;
+export default Dashboard;

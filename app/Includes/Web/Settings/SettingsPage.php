@@ -38,8 +38,7 @@ class SettingsPage {
 		}
 	}
 
-	public function enqueue_assets($hook) {
-		if ($hook !== 'toplevel_page_rapidcrm-settings') return;
+	public function enqueue_assets( $hook ) {
 
 		wp_enqueue_script(
 			'rapidcrm-admin-settings',
@@ -47,13 +46,13 @@ class SettingsPage {
 			[],
 			time(),
 			true
-		  );
+		);
 		  
 	}
 
 	public function render() {
 		echo '<div class="wrap">';
-		echo '<div id="rapid-crm-settings-root"></div>';
+		echo '<div id="rapid-crm-root"></div>';
 		echo '</div>';
 	}
 }

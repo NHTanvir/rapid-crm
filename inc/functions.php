@@ -9,7 +9,7 @@ function rapidcrm_menus() {
 			'callback'		=> function() {
 				printf(
 					'
-						<div id="rapid-crm-settings-root">%1$s</div>
+						<div id="rapid-crm-root">%1$s</div>
 					',
 					esc_html__( 'Loading..', 'rapid-crm' )
 				);

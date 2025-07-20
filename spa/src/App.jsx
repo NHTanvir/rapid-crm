@@ -6,6 +6,6 @@ const App = () => {
   return <SettingsPage />;
 };
 
-const container = document.getElementById("rapid-crm-settings-root");
+const container = document.getElementById("rapid-crm-root");
 const root = ReactDOM.createRoot(container);
 root.render(<App />);
