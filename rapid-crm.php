@@ -23,5 +23,5 @@ define( 'RAPIDCRM_SPA_URL', RAPIDCRM_PLUGIN_URL . 'spa/' );
 require_once 'vendor/autoload.php';
 
 add_action('plugins_loaded', function () {
-	Core\Initializer::init();
+	Includes\Initializer::init();
 });

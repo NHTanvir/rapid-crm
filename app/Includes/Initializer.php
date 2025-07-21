@@ -1,15 +1,15 @@
 <?php
-namespace RapidCRM\Core;
+namespace RapidCRM\Includes;
 
-use RapidCRM\Includes\Web\Settings\SettingsPage;
+use RapidCRM\Admin\Settings;
 use RapidCRM\Database\Database;
 
 defined('ABSPATH') || exit;
 
 class Initializer {
     public static function init() {
-        $page = new SettingsPage();
-        $page->register();
+        $admin = new Settings();
+        $admin->register();
         
         $database = new Database();
         $database->init();
