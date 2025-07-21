@@ -31,9 +31,14 @@ function rapidcrm_menus() {
 					'slug' 			=> 'rapid-crm#/lists'
 				],
 				[
-					'page_title' 	=> __( 'tags', 'rapid-crm' ),
-					'menu_title' 	=> __( 'tags', 'rapid-crm' ),
+					'page_title' 	=> __( 'Tags', 'rapid-crm' ),
+					'menu_title' 	=> __( 'Tags', 'rapid-crm' ),
 					'slug' 			=> 'rapid-crm#/tags'
+				],
+				[
+					'page_title' 	=> __( 'Settings', 'rapid-crm' ),
+					'menu_title' 	=> __( 'Settings', 'rapid-crm' ),
+					'slug' 			=> 'rapid-crm#/settings'
 				],
 			]
 		]
