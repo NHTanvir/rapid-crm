@@ -1,4 +1,20 @@
 <?php
+
+/**
+ * Returns the home URL of the WordPress site.
+ *
+ * @param string $path    Optional. Path relative to the home URL.
+ * @param int    $blog_id Optional. ID of the blog in a multisite installation.
+ *
+ * @return string Home URL with optional path appended.
+ */
+function rapidcrm_home_url( $path = '', $blog_id = null ) {
+	return get_home_url( $blog_id, $path );
+}
+
+function rapidcrm_rest_base() {
+	return rest_url( '/rapidcrm/v1' );
+}
 function rapidcrm_menus() {
     	return apply_filters( 'rapidcrm_menus', [
 		[
