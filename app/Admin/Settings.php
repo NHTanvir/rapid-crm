@@ -1,13 +1,16 @@
 <?php
 namespace RapidCRM\Admin;
 
+use RapidCRM\Traits\Hook;
+
 defined( 'ABSPATH' ) || exit;
 
 class Settings {
+    use Hook;
 
     public function register() {
-        add_action( 'admin_menu', [ $this, 'add_menu' ] );
-        add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_assets' ] );
+        $this->action( 'admin_menu', [ $this, 'add_menu' ] );
+        $this->action( 'admin_enqueue_scripts', [ $this, 'enqueue_assets' ] );
     }
 
     public function add_menu() {
