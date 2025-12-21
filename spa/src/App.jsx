@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
+import './styles/globals.css';
+import './styles/dashboard.css';
+import './styles/contacts.css';
+import './styles/lists.css';
+import './styles/tags.css';
+import './styles/settings.css';
 
 // Pages
 import Dashboard from "./pages/Dashboard";
@@ -33,7 +39,7 @@ const App = () => {
 
     useEffect(() => {
         window.addEventListener("hashchange", handleHashChange);
-        handleHashChange(); 
+        handleHashChange();
         return () => window.removeEventListener("hashchange", handleHashChange);
     }, []);
 
@@ -54,7 +60,7 @@ const App = () => {
         }
     };
 
-    return <div>{renderContent()}</div>;
+    return <div className="animate-fade-in">{renderContent()}</div>;
 };
 
 const container = document.getElementById("rapid-crm-root");

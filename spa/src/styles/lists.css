@@ -1,0 +1,748 @@
+/* 
+ * Lists Page Styles for Rapid CRM
+ * Contains all styling specific to the lists page
+ * Includes list cards, creation forms, and list management
+ */
+
+/* Lists page container */
+.lists-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Lists header */
+.lists-header {
+  margin-bottom: 2.5rem;
+}
+
+.lists-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.lists-subtitle {
+  font-size: 1.25rem;
+  color: #6b7280;
+}
+
+/* Controls container */
+.lists-controls-container {
+  background: linear-gradient(to bottom right, #ffffff, #f9fafb);
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.lists-controls-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.lists-controls-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: linear-gradient(to right, #f9fafb, #ffffff);
+  border-radius: 1rem 1rem 0 0;
+}
+
+.lists-controls-body {
+  padding: 1.5rem;
+}
+
+/* Stats container */
+.lists-stats {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+/* Create list button */
+.create-list-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-list-button:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(102, 126, 234, 0.4);
+}
+
+.create-list-button:active {
+  transform: translateY(0);
+}
+
+/* Create list form */
+.create-list-form {
+  padding: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  background: linear-gradient(to right, #f9fafb, #ffffff);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .create-list-form {
+    grid-template-columns: 1fr auto auto;
+  }
+}
+
+.create-list-input {
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.create-list-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  border-color: #3b82f6;
+}
+
+.create-list-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.create-list-submit {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.create-list-submit:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+.create-list-cancel {
+  background: linear-gradient(to right, #f3f4f6, #e5e7eb);
+  color: #374151;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.create-list-cancel:hover {
+  background: linear-gradient(to right, #e5e7eb, #d1d5db);
+}
+
+/* Lists grid */
+.lists-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .lists-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .lists-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* List card */
+.list-card {
+  background: linear-gradient(to bottom right, #ffffff, #f9fafb);
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.list-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.list-card-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: linear-gradient(to right, #f9fafb, #ffffff);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.list-card-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.list-card-action-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: none;
+  background: #f3f4f6;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-card-action-button:hover {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.list-card-action-button.edit:hover {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.list-card-action-button.delete:hover {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.list-card-body {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-card-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.list-card-stat {
+  display: flex;
+  align-items: center;
+}
+
+.list-card-stat-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.list-card-stat-icon.contacts {
+  background: linear-gradient(to bottom right, #dbeafe, #bfdbfe);
+}
+
+.list-card-stat-icon.date {
+  background: linear-gradient(to bottom right, #d1fae5, #a7f3d0);
+}
+
+.list-card-stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.list-card-stat-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.list-card-footer {
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
+.view-contacts-button {
+  width: 100%;
+  background: linear-gradient(to right, #f3f4f6, #e5e7eb);
+  color: #374151;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.view-contacts-button:hover {
+  background: linear-gradient(to right, #e5e7eb, #d1d5db);
+}
+
+/* Empty state */
+.lists-empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.lists-empty-state-icon {
+  width: 6rem;
+  height: 6rem;
+  margin: 0 auto 1rem;
+  color: #9ca3af;
+}
+
+.lists-empty-state-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.lists-empty-state-message {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.lists-empty-state-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lists-empty-state-button:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(102, 126, 234, 0.4);
+}
+
+/* Loading state */
+.lists-loading-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lists-loading-spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #667eea;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.lists-loading-text {
+  color: #6b7280;
+}
+
+/* Animation for lists */
+@keyframes listSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.list-card {
+  animation: listSlideUp 0.4s ease-out;
+}
+
+.list-card.delay-1 {
+  animation-delay: 0.1s;
+}
+
+.list-card.delay-2 {
+  animation-delay: 0.2s;
+}
+
+.list-card.delay-3 {
+  animation-delay: 0.3s;
+}
+
+.list-card.delay-4 {
+  animation-delay: 0.4s;
+}
+
+.list-card.delay-5 {
+  animation-delay: 0.5s;
+}
+
+/* Lists page specific text styles */
+.lists-text-primary {
+  color: #1f2937;
+}
+
+.lists-text-secondary {
+  color: #6b7280;
+}
+
+.lists-text-accent {
+  color: #3b82f6;
+}
+
+.lists-text-success {
+  color: #10b981;
+}
+
+.lists-text-warning {
+  color: #f59e0b;
+}
+
+.lists-text-danger {
+  color: #ef4444;
+}
+
+/* Lists page specific button styles */
+.lists-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid #d1d5db;
+  background: white;
+  color: #374151;
+}
+
+.lists-button:hover {
+  background: #f3f4f6;
+}
+
+.lists-button.primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+}
+
+.lists-button.primary:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+.lists-button.danger {
+  background: linear-gradient(to right, #fee2e2, #fecaca);
+  color: #b91c1c;
+}
+
+.lists-button.danger:hover {
+  background: linear-gradient(to right, #fecaca, #f87171);
+}
+
+/* Lists page specific input styles */
+.lists-input {
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  width: 100%;
+}
+
+.lists-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  border-color: #3b82f6;
+}
+
+/* Lists page specific card styles */
+.lists-card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.lists-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.lists-card-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: linear-gradient(to right, #f9fafb, #ffffff);
+}
+
+.lists-card-body {
+  padding: 1.5rem;
+}
+
+.lists-card-footer {
+  padding: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  background: linear-gradient(to right, #f9fafb, #ffffff);
+}
+
+/* Lists page specific grid styles */
+.lists-grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .lists-grid-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .lists-grid-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Lists page specific form styles */
+.lists-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .lists-form {
+    flex-direction: row;
+    align-items: end;
+  }
+}
+
+.lists-form-group {
+  flex: 1;
+}
+
+.lists-form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.875rem;
+}
+
+.lists-form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.lists-form-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  border-color: #3b82f6;
+}
+
+.lists-form-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .lists-form-actions {
+    margin-top: 0;
+    margin-left: 0.75rem;
+  }
+}
+
+/* Lists page specific table styles */
+.lists-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.lists-table th,
+.lists-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.lists-table th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+}
+
+.lists-table thead {
+  background: linear-gradient(to right, #f0f9ff, #e0f2fe);
+}
+
+.lists-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.lists-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+/* Lists page specific badge styles */
+.lists-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.lists-badge.active {
+  background: linear-gradient(to right, #d1fae5, #a7f3d0);
+  color: #065f46;
+}
+
+.lists-badge.lead {
+  background: linear-gradient(to right, #dbeafe, #bfdbfe);
+  color: #1e40af;
+}
+
+.lists-badge.customer {
+  background: linear-gradient(to right, #f3e8ff, #e9d5ff);
+  color: #7e22ce;
+}
+
+.lists-badge.prospect {
+  background: linear-gradient(to right, #fef3c7, #fde68a);
+  color: #92400e;
+}
+
+/* Lists page specific icon styles */
+.lists-icon {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lists-icon.contacts {
+  background: linear-gradient(to bottom right, #dbeafe, #bfdbfe);
+  color: #2563eb;
+}
+
+.lists-icon.date {
+  background: linear-gradient(to bottom right, #d1fae5, #a7f3d0);
+  color: #059669;
+}
+
+.lists-icon.tasks {
+  background: linear-gradient(to bottom right, #f3e8ff, #e9d5ff);
+  color: #7e22ce;
+}
+
+/* Lists page specific animation styles */
+.lists-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.lists-slide-up {
+  animation: slideUp 0.4s ease-out;
+}
+
+.lists-pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Lists page specific hover effects */
+.lists-hover-lift {
+  transition: all 0.3s ease;
+}
+
+.lists-hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.lists-card-glow {
+  transition: all 0.3s ease;
+}
+
+.lists-card-glow:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-3px);
+}
+
+/* Lists page specific gradient backgrounds */
+.lists-gradient-bg {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.lists-gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

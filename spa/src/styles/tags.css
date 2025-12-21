@@ -1,0 +1,918 @@
+/* 
+ * Tags Page Styles for Rapid CRM
+ * Contains all styling specific to the tags page
+ * Includes tag cards, creation forms, and tag management
+ */
+
+/* Tags page container */
+.tags-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Tags header */
+.tags-header {
+  margin-bottom: 2.5rem;
+}
+
+.tags-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.tags-subtitle {
+  font-size: 1.25rem;
+  color: #6b7280;
+}
+
+/* Controls container */
+.tags-controls-container {
+  background: linear-gradient(to bottom right, #ffffff, #f9fafb);
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.tags-controls-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.tags-controls-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: linear-gradient(to right, #f9fafb, #ffffff);
+  border-radius: 1rem 1rem 0 0;
+}
+
+.tags-controls-body {
+  padding: 1.5rem;
+}
+
+/* Stats container */
+.tags-stats {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+/* Create tag button */
+.create-tag-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-tag-button:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(102, 126, 234, 0.4);
+}
+
+.create-tag-button:active {
+  transform: translateY(0);
+}
+
+/* Create tag form */
+.create-tag-form {
+  padding: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  background: linear-gradient(to right, #f9fafb, #ffffff);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .create-tag-form {
+    grid-template-columns: 1fr 1fr auto auto;
+  }
+}
+
+.create-tag-input {
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.create-tag-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  border-color: #3b82f6;
+}
+
+.create-tag-color-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.create-tag-color {
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid #d1d5db;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.create-tag-color-value {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.create-tag-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.create-tag-submit {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.create-tag-submit:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+.create-tag-cancel {
+  background: linear-gradient(to right, #f3f4f6, #e5e7eb);
+  color: #374151;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.create-tag-cancel:hover {
+  background: linear-gradient(to right, #e5e7eb, #d1d5db);
+}
+
+/* Tags grid */
+.tags-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .tags-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .tags-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Tag card */
+.tag-card {
+  background: linear-gradient(to bottom right, #ffffff, #f9fafb);
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tag-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.tag-card-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: linear-gradient(to right, #f9fafb, #ffffff);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tag-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.tag-card-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.tag-card-action-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: none;
+  background: #f3f4f6;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tag-card-action-button:hover {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.tag-card-action-button.edit:hover {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.tag-card-action-button.delete:hover {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.tag-card-body {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.tag-card-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.2s;
+  margin: 0 auto 1.5rem;
+  border: 2px solid transparent;
+}
+
+.tag-card-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.tag-card-stat {
+  display: flex;
+  align-items: center;
+}
+
+.tag-card-stat-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.tag-card-stat-icon.contacts {
+  background: linear-gradient(to bottom right, #dbeafe, #bfdbfe);
+}
+
+.tag-card-stat-icon.date {
+  background: linear-gradient(to bottom right, #d1fae5, #a7f3d0);
+}
+
+.tag-card-stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.tag-card-stat-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.tag-card-footer {
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
+.view-contacts-button {
+  width: 100%;
+  background: linear-gradient(to right, #f3f4f6, #e5e7eb);
+  color: #374151;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.view-contacts-button:hover {
+  background: linear-gradient(to right, #e5e7eb, #d1d5db);
+}
+
+/* Empty state */
+.tags-empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.tags-empty-state-icon {
+  width: 6rem;
+  height: 6rem;
+  margin: 0 auto 1rem;
+  color: #9ca3af;
+}
+
+.tags-empty-state-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.tags-empty-state-message {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.tags-empty-state-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tags-empty-state-button:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(102, 126, 234, 0.4);
+}
+
+/* Loading state */
+.tags-loading-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tags-loading-spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #667eea;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.tags-loading-text {
+  color: #6b7280;
+}
+
+/* Animation for tags */
+@keyframes tagSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tag-card {
+  animation: tagSlideUp 0.4s ease-out;
+}
+
+.tag-card.delay-1 {
+  animation-delay: 0.1s;
+}
+
+.tag-card.delay-2 {
+  animation-delay: 0.2s;
+}
+
+.tag-card.delay-3 {
+  animation-delay: 0.3s;
+}
+
+.tag-card.delay-4 {
+  animation-delay: 0.4s;
+}
+
+.tag-card.delay-5 {
+  animation-delay: 0.5s;
+}
+
+/* Tags page specific text styles */
+.tags-text-primary {
+  color: #1f2937;
+}
+
+.tags-text-secondary {
+  color: #6b7280;
+}
+
+.tags-text-accent {
+  color: #3b82f6;
+}
+
+.tags-text-success {
+  color: #10b981;
+}
+
+.tags-text-warning {
+  color: #f59e0b;
+}
+
+.tags-text-danger {
+  color: #ef4444;
+}
+
+/* Tags page specific button styles */
+.tags-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid #d1d5db;
+  background: white;
+  color: #374151;
+}
+
+.tags-button:hover {
+  background: #f3f4f6;
+}
+
+.tags-button.primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+}
+
+.tags-button.primary:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+.tags-button.danger {
+  background: linear-gradient(to right, #fee2e2, #fecaca);
+  color: #b91c1c;
+}
+
+.tags-button.danger:hover {
+  background: linear-gradient(to right, #fecaca, #f87171);
+}
+
+/* Tags page specific input styles */
+.tags-input {
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  width: 100%;
+}
+
+.tags-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  border-color: #3b82f6;
+}
+
+/* Tags page specific card styles */
+.tags-card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.tags-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.tags-card-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: linear-gradient(to right, #f9fafb, #ffffff);
+}
+
+.tags-card-body {
+  padding: 1.5rem;
+}
+
+.tags-card-footer {
+  padding: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  background: linear-gradient(to right, #f9fafb, #ffffff);
+}
+
+/* Tags page specific grid styles */
+.tags-grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .tags-grid-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .tags-grid-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Tags page specific form styles */
+.tags-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .tags-form {
+    flex-direction: row;
+    align-items: end;
+  }
+}
+
+.tags-form-group {
+  flex: 1;
+}
+
+.tags-form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.875rem;
+}
+
+.tags-form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.tags-form-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  border-color: #3b82f6;
+}
+
+.tags-form-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .tags-form-actions {
+    margin-top: 0;
+    margin-left: 0.75rem;
+  }
+}
+
+/* Tags page specific table styles */
+.tags-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tags-table th,
+.tags-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tags-table th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+}
+
+.tags-table thead {
+  background: linear-gradient(to right, #f0f9ff, #e0f2fe);
+}
+
+.tags-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.tags-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+/* Tags page specific badge styles */
+.tags-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.tags-badge.active {
+  background: linear-gradient(to right, #d1fae5, #a7f3d0);
+  color: #065f46;
+}
+
+.tags-badge.lead {
+  background: linear-gradient(to right, #dbeafe, #bfdbfe);
+  color: #1e40af;
+}
+
+.tags-badge.customer {
+  background: linear-gradient(to right, #f3e8ff, #e9d5ff);
+  color: #7e22ce;
+}
+
+.tags-badge.prospect {
+  background: linear-gradient(to right, #fef3c7, #fde68a);
+  color: #92400e;
+}
+
+/* Tags page specific icon styles */
+.tags-icon {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tags-icon.contacts {
+  background: linear-gradient(to bottom right, #dbeafe, #bfdbfe);
+  color: #2563eb;
+}
+
+.tags-icon.date {
+  background: linear-gradient(to bottom right, #d1fae5, #a7f3d0);
+  color: #059669;
+}
+
+.tags-icon.tasks {
+  background: linear-gradient(to bottom right, #f3e8ff, #e9d5ff);
+  color: #7e22ce;
+}
+
+/* Tags page specific animation styles */
+.tags-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.tags-slide-up {
+  animation: slideUp 0.4s ease-out;
+}
+
+.tags-pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Tags page specific hover effects */
+.tags-hover-lift {
+  transition: all 0.3s ease;
+}
+
+.tags-hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.tags-card-glow {
+  transition: all 0.3s ease;
+}
+
+.tags-card-glow:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-3px);
+}
+
+/* Tags page specific gradient backgrounds */
+.tags-gradient-bg {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.tags-gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Tag badge with custom color styling */
+.tag-badge-vip {
+  background: linear-gradient(to right, #10b98120, #10b98130);
+  color: #047857;
+  border-color: #10b98140;
+}
+
+.tag-badge-hot {
+  background: linear-gradient(to right, #ef444420, #ef444430);
+  color: #b91c1c;
+  border-color: #ef444440;
+}
+
+.tag-badge-newsletter {
+  background: linear-gradient(to right, #8b5cf620, #8b5cf630);
+  color: #6b21a8;
+  border-color: #8b5cf640;
+}
+
+.tag-badge-high {
+  background: linear-gradient(to right, #f59e0b20, #f59e0b30);
+  color: #92400e;
+  border-color: #f59e0b40;
+}
+
+.tag-badge-follow {
+  background: linear-gradient(to right, #3b82f620, #3b82f630);
+  color: #1d4ed8;
+  border-color: #3b82f640;
+}
+
+.tag-badge-inactive {
+  background: linear-gradient(to right, #6b728020, #6b728030);
+  color: #374151;
+  border-color: #6b728040;
+}
+
+/* Tags page specific color picker styles */
+.tags-color-picker {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tags-color-preview {
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid #d1d5db;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.tags-color-value {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Tags page specific action button styles */
+.tags-action-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: none;
+  background: #f3f4f6;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tags-action-button:hover {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.tags-action-button.edit:hover {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.tags-action-button.delete:hover {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* Tags page specific stat card styles */
+.tags-stat-card {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tags-stat-icon-container {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.tags-stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.tags-stat-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Tags page specific responsive adjustments */
+@media (max-width: 767px) {
+  .create-tag-form {
+    grid-template-columns: 1fr;
+  }
+  
+  .create-tag-color-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .tags-controls-container {
+    padding: 1rem;
+  }
+  
+  .tags-controls-body {
+    padding: 1rem;
+  }
+}
