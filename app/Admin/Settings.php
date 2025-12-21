@@ -14,7 +14,7 @@ class Settings {
     }
 
     public function add_menu() {
-        $menus = rapidcrm_menus(); 
+        $menus = rapidcrm_menus();
 
         foreach ( $menus as $menu ) {
             add_menu_page(
