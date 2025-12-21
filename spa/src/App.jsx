@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
-import './styles/globals.css';
-import './styles/dashboard.css';
-import './styles/contacts.css';
-import './styles/lists.css';
-import './styles/tags.css';
-import './styles/settings.css';
+import './index.css';
 
 // Pages
 import Dashboard from "./pages/Dashboard";
