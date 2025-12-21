@@ -44,11 +44,12 @@ class Settings {
 
 
     public function enqueue_assets( $hook ) {
+        // Enqueue the JavaScript bundle
         wp_enqueue_script(
             'rapidcrm-admin-settings',
             RAPIDCRM_PLUGIN_URL . 'build/rapidcrm.bundle.js',
             [],
-            '1.0.0',
+            filemtime( RAPIDCRM_PLUGIN_DIR . 'build/rapidcrm.bundle.js' ),
             true
         );
     }
