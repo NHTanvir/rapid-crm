@@ -28,55 +28,46 @@ const Contacts = () => {
   );
 
   const StatusBadge = ({ status }) => {
-    let bgColor = '';
-    let textColor = '';
-    if (status === 'Active') {
-      bgColor = 'bg-gradient-to-r from-green-100 to-green-200';
-      textColor = 'text-green-800';
-    } else if (status === 'Lead') {
-      bgColor = 'bg-gradient-to-r from-blue-100 to-blue-200';
-      textColor = 'text-blue-800';
-    } else if (status === 'Customer') {
-      bgColor = 'bg-gradient-to-r from-purple-100 to-purple-200';
-      textColor = 'text-purple-800';
-    } else if (status === 'Prospect') {
-      bgColor = 'bg-gradient-to-r from-yellow-100 to-yellow-200';
-      textColor = 'text-yellow-800';
-    }
+    const statusStyles = {
+      Active: 'bg-green-100 text-green-800',
+      Lead: 'bg-blue-100 text-blue-800',
+      Customer: 'bg-purple-100 text-purple-800',
+      Prospect: 'bg-yellow-100 text-yellow-800'
+    };
 
     return (
-      <span className={`px-3 py-1 text-xs font-semibold rounded-full ${bgColor} ${textColor} animate-pulse-slow`}>
+      <span className={`px-2 py-1 text-xs font-medium rounded-full ${statusStyles[status] || 'bg-gray-100 text-gray-800'}`}>
         {status}
       </span>
     );
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
-      <div className="mb-10">
-        <h1 className="text-3xl font-bold text-gray-900">Contacts</h1>
-        <p className="mt-2 text-lg text-gray-600">Manage your customer relationships</p>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="mb-6">
+        <h1 className="text-2xl font-bold text-gray-900">Contacts</h1>
+        <p className="text-gray-600">Manage your customer relationships</p>
       </div>
 
       {/* Controls */}
-      <div className="card-glow bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg border border-gray-100 mb-8">
-        <div className="px-6 py-5 border-b border-gray-100 bg-gradient-to-r from-gray-50 to-white rounded-t-xl">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0">
+      <div className="bg-white rounded-lg shadow-sm border border-gray-200 mb-6">
+        <div className="px-6 py-4 border-b border-gray-200">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div className="relative flex-1 max-w-md">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <svg className="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
+                <svg className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 20 20" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
               <input
                 type="text"
                 placeholder="Search contacts..."
-                className="form-input w-full pl-10 pr-4 py-3 text-base border-gray-200 focus:border-blue-500 focus:ring-blue-500 rounded-lg"
+                className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
-            <button className="btn-primary text-white py-3 px-6 rounded-lg text-sm font-semibold ml-0 sm:ml-4 mt-4 sm:mt-0 transition-all duration-300 transform hover:scale-[1.02]">
+            <button className="bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200 whitespace-nowrap">
               Add New Contact
             </button>
           </div>
@@ -84,62 +75,58 @@ const Contacts = () => {
       </div>
 
       {/* Contacts Table */}
-      <div className="card-glow bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg border border-gray-100 overflow-hidden">
+      <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
         {isLoading ? (
-          <div className="p-16 flex flex-col items-center justify-center">
-            <div className="spinner mb-4"></div>
+          <div className="p-12 flex flex-col items-center justify-center">
+            <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-blue-600 mb-4"></div>
             <p className="text-gray-600">Loading contacts...</p>
           </div>
         ) : (
           <>
             <div className="overflow-x-auto">
-              <table className="min-w-full table-container">
-                <thead>
+              <table className="min-w-full divide-y divide-gray-200">
+                <thead className="bg-gray-50">
                   <tr>
-                    <th scope="col" className="px-6 py-4 text-left text-sm font-semibold text-gray-900 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Contact
                     </th>
-                    <th scope="col" className="px-6 py-4 text-left text-sm font-semibold text-gray-900 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Company
                     </th>
-                    <th scope="col" className="px-6 py-4 text-left text-sm font-semibold text-gray-900 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Phone
                     </th>
-                    <th scope="col" className="px-6 py-4 text-left text-sm font-semibold text-gray-900 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Status
                     </th>
-                    <th scope="col" className="px-6 py-4 text-left text-sm font-semibold text-gray-900 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Last Contact
                     </th>
-                    <th scope="col" className="px-6 py-4 text-right text-sm font-semibold text-gray-900 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Actions
                     </th>
                   </tr>
                 </thead>
-                <tbody>
-                  {filteredContacts.map((contact, index) => (
-                    <tr
-                      key={contact.id}
-                      className={`hover:bg-gray-50 transition-colors duration-200 animate-slide-up`}
-                      style={{ animationDelay: `${index * 50}ms` }}
-                    >
+                <tbody className="bg-white divide-y divide-gray-200">
+                  {filteredContacts.map((contact) => (
+                    <tr key={contact.id} className="hover:bg-gray-50 transition-colors duration-150">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
-                          <div className="flex-shrink-0 h-12 w-12">
-                            <div className="h-12 w-12 rounded-full bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center shadow-sm">
-                              <span className="text-blue-800 font-bold text-lg">{contact.name.charAt(0)}</span>
+                          <div className="flex-shrink-0 h-10 w-10">
+                            <div className="h-10 w-10 rounded-full bg-gray-200 flex items-center justify-center">
+                              <span className="text-gray-700 font-medium">{contact.name.charAt(0)}</span>
                             </div>
                           </div>
                           <div className="ml-4">
-                            <div className="text-sm font-semibold text-gray-900">{contact.name}</div>
+                            <div className="text-sm font-medium text-gray-900">{contact.name}</div>
                             <div className="text-sm text-gray-500">{contact.email}</div>
                           </div>
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="text-sm font-medium text-gray-900">{contact.company}</div>
+                        <div className="text-sm text-gray-900">{contact.company}</div>
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                         {contact.phone}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
@@ -149,10 +136,10 @@ const Contacts = () => {
                         {contact.lastContact}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                        <button className="text-blue-600 hover:text-blue-800 font-semibold mr-4 transition-colors duration-200 transform hover:scale-105">
+                        <button className="text-blue-600 hover:text-blue-900 mr-3 font-medium">
                           Edit
                         </button>
-                        <button className="text-red-600 hover:text-red-800 font-semibold transition-colors duration-200 transform hover:scale-105">
+                        <button className="text-red-600 hover:text-red-900 font-medium">
                           Delete
                         </button>
                       </td>
@@ -163,14 +150,14 @@ const Contacts = () => {
             </div>
 
             {filteredContacts.length === 0 && !isLoading && (
-              <div className="text-center py-16">
-                <svg className="mx-auto h-16 w-16 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="text-center py-12">
+                <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
-                <h3 className="mt-4 text-xl font-semibold text-gray-900">No contacts found</h3>
+                <h3 className="mt-4 text-lg font-medium text-gray-900">No contacts found</h3>
                 <p className="mt-2 text-gray-600">Get started by creating a new contact.</p>
-                <div className="mt-8">
-                  <button className="btn-primary text-white py-3 px-6 rounded-lg text-sm font-semibold transition-all duration-300 transform hover:scale-[1.02]">
+                <div className="mt-6">
+                  <button className="bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200">
                     Add New Contact
                   </button>
                 </div>
