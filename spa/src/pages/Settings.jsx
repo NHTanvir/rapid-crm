@@ -55,9 +55,9 @@ const Settings = () => {
   };
 
   const renderGeneralSettings = () => (
-    <div className="space-y-8">
+    <div className="space-y-6">
       <div>
-        <label htmlFor="siteName" className="block text-sm font-semibold text-gray-700 mb-2">
+        <label htmlFor="siteName" className="block text-sm font-medium text-gray-700 mb-1">
           Site Name
         </label>
         <input
@@ -66,12 +66,12 @@ const Settings = () => {
           id="siteName"
           value={formData.siteName}
           onChange={handleInputChange}
-          className="form-input w-full py-3 px-4 text-base border-gray-200 focus:border-blue-500 focus:ring-blue-500 rounded-lg"
+          className="block w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
         />
       </div>
 
       <div>
-        <label htmlFor="siteDescription" className="block text-sm font-semibold text-gray-700 mb-2">
+        <label htmlFor="siteDescription" className="block text-sm font-medium text-gray-700 mb-1">
           Site Description
         </label>
         <textarea
@@ -80,12 +80,12 @@ const Settings = () => {
           rows={3}
           value={formData.siteDescription}
           onChange={handleInputChange}
-          className="form-input w-full py-3 px-4 text-base border-gray-200 focus:border-blue-500 focus:ring-blue-500 rounded-lg"
+          className="block w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
         />
       </div>
 
       <div>
-        <label htmlFor="adminEmail" className="block text-sm font-semibold text-gray-700 mb-2">
+        <label htmlFor="adminEmail" className="block text-sm font-medium text-gray-700 mb-1">
           Admin Email
         </label>
         <input
@@ -94,13 +94,13 @@ const Settings = () => {
           id="adminEmail"
           value={formData.adminEmail}
           onChange={handleInputChange}
-          className="form-input w-full py-3 px-4 text-base border-gray-200 focus:border-blue-500 focus:ring-blue-500 rounded-lg"
+          className="block w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
         />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="dateFormat" className="block text-sm font-semibold text-gray-700 mb-2">
+          <label htmlFor="dateFormat" className="block text-sm font-medium text-gray-700 mb-1">
             Date Format
           </label>
           <select
@@ -108,7 +108,7 @@ const Settings = () => {
             name="dateFormat"
             value={formData.dateFormat}
             onChange={handleInputChange}
-            className="form-select w-full py-3 px-4 text-base border-gray-200 focus:border-blue-500 focus:ring-blue-500 rounded-lg"
+            className="block w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
           >
             <option value="F j, Y">December 21, 2025</option>
             <option value="Y-m-d">2025-12-21</option>
@@ -118,7 +118,7 @@ const Settings = () => {
         </div>
 
         <div>
-          <label htmlFor="timeFormat" className="block text-sm font-semibold text-gray-700 mb-2">
+          <label htmlFor="timeFormat" className="block text-sm font-medium text-gray-700 mb-1">
             Time Format
           </label>
           <select
@@ -126,7 +126,7 @@ const Settings = () => {
             name="timeFormat"
             value={formData.timeFormat}
             onChange={handleInputChange}
-            className="form-select w-full py-3 px-4 text-base border-gray-200 focus:border-blue-500 focus:ring-blue-500 rounded-lg"
+            className="block w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
           >
             <option value="g:i A">11:59 PM</option>
             <option value="H:i">23:59</option>
@@ -135,7 +135,7 @@ const Settings = () => {
       </div>
 
       <div>
-        <label htmlFor="timezone" className="block text-sm font-semibold text-gray-700 mb-2">
+        <label htmlFor="timezone" className="block text-sm font-medium text-gray-700 mb-1">
           Timezone
         </label>
         <select
@@ -143,7 +143,7 @@ const Settings = () => {
           name="timezone"
           value={formData.timezone}
           onChange={handleInputChange}
-          className="form-select w-full py-3 px-4 text-base border-gray-200 focus:border-blue-500 focus:ring-blue-500 rounded-lg"
+          className="block w-full px-3 py-1.5 text-sm border border-gray-300 rounded-md focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
         >
           <option value="America/New_York">Eastern Time (US & Canada)</option>
           <option value="America/Chicago">Central Time (US & Canada)</option>
@@ -156,24 +156,24 @@ const Settings = () => {
   );
 
   const renderNotificationSettings = () => (
-    <div className="space-y-8">
-      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-400 p-6 rounded-r-lg">
+    <div className="space-y-6">
+      <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-md">
         <div className="flex">
           <div className="flex-shrink-0">
-            <svg className="h-6 w-6 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+            <svg className="h-5 w-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
-          <div className="ml-4">
-            <p className="text-base text-blue-800 font-medium">
+          <div className="ml-3">
+            <p className="text-sm text-blue-700">
               Configure how you want to receive notifications about your CRM activities.
             </p>
           </div>
         </div>
       </div>
 
-      <div className="space-y-6">
-        <div className="flex items-center justify-between p-6 bg-gradient-to-r from-white to-gray-50 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200">
+      <div className="space-y-4">
+        <div className="flex items-center justify-between p-4 bg-white rounded-md border border-gray-200">
           <div className="flex items-center">
             <input
               id="notifications.email"
@@ -181,16 +181,16 @@ const Settings = () => {
               type="checkbox"
               checked={formData.notifications.email}
               onChange={handleInputChange}
-              className="h-5 w-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300"
+              className="h-4 w-4 text-blue-600 rounded focus:ring-blue-500 border-gray-300"
             />
-            <label htmlFor="notifications.email" className="ml-4 block text-lg font-medium text-gray-900">
+            <label htmlFor="notifications.email" className="ml-3 block text-sm font-medium text-gray-900">
               Email Notifications
             </label>
           </div>
-          <span className="text-lg text-gray-600">Receive email alerts</span>
+          <span className="text-sm text-gray-600">Receive email alerts</span>
         </div>
 
-        <div className="flex items-center justify-between p-6 bg-gradient-to-r from-white to-gray-50 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200">
+        <div className="flex items-center justify-between p-4 bg-white rounded-md border border-gray-200">
           <div className="flex items-center">
             <input
               id="notifications.sms"
@@ -198,16 +198,16 @@ const Settings = () => {
               type="checkbox"
               checked={formData.notifications.sms}
               onChange={handleInputChange}
-              className="h-5 w-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300"
+              className="h-4 w-4 text-blue-600 rounded focus:ring-blue-500 border-gray-300"
             />
-            <label htmlFor="notifications.sms" className="ml-4 block text-lg font-medium text-gray-900">
+            <label htmlFor="notifications.sms" className="ml-3 block text-sm font-medium text-gray-900">
               SMS Notifications
             </label>
           </div>
-          <span className="text-lg text-gray-600">Receive text alerts</span>
+          <span className="text-sm text-gray-600">Receive text alerts</span>
         </div>
 
-        <div className="flex items-center justify-between p-6 bg-gradient-to-r from-white to-gray-50 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200">
+        <div className="flex items-center justify-between p-4 bg-white rounded-md border border-gray-200">
           <div className="flex items-center">
             <input
               id="notifications.push"
@@ -215,46 +215,46 @@ const Settings = () => {
               type="checkbox"
               checked={formData.notifications.push}
               onChange={handleInputChange}
-              className="h-5 w-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300"
+              className="h-4 w-4 text-blue-600 rounded focus:ring-blue-500 border-gray-300"
             />
-            <label htmlFor="notifications.push" className="ml-4 block text-lg font-medium text-gray-900">
+            <label htmlFor="notifications.push" className="ml-3 block text-sm font-medium text-gray-900">
               Push Notifications
             </label>
           </div>
-          <span className="text-lg text-gray-600">Receive browser notifications</span>
+          <span className="text-sm text-gray-600">Receive browser notifications</span>
         </div>
       </div>
     </div>
   );
 
   const renderIntegrationSettings = () => (
-    <div className="space-y-8">
-      <div className="bg-gradient-to-r from-purple-50 to-indigo-50 border-l-4 border-purple-400 p-6 rounded-r-lg">
+    <div className="space-y-6">
+      <div className="bg-purple-50 border-l-4 border-purple-400 p-4 rounded-r-md">
         <div className="flex">
           <div className="flex-shrink-0">
-            <svg className="h-6 w-6 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+            <svg className="h-5 w-5 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
-          <div className="ml-4">
-            <p className="text-base text-purple-800 font-medium">
+          <div className="ml-3">
+            <p className="text-sm text-purple-700">
               Connect with third-party services to extend your CRM capabilities.
             </p>
           </div>
         </div>
       </div>
 
-      <div className="space-y-6">
-        <div className="flex items-center justify-between p-6 bg-gradient-to-r from-white to-gray-50 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200">
+      <div className="space-y-4">
+        <div className="flex items-center justify-between p-4 bg-white rounded-md border border-gray-200">
           <div className="flex items-center">
-            <div className="flex-shrink-0 h-12 w-12">
-              <div className="h-12 w-12 rounded-full bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
-                <span className="text-orange-800 font-bold text-lg">M</span>
+            <div className="flex-shrink-0 h-8 w-8">
+              <div className="h-8 w-8 rounded-full bg-orange-100 flex items-center justify-center">
+                <span className="text-orange-800 text-xs font-medium">M</span>
               </div>
             </div>
-            <div className="ml-4">
-              <h3 className="text-lg font-bold text-gray-900">Mailchimp</h3>
-              <p className="text-gray-600">Sync contacts and manage email campaigns</p>
+            <div className="ml-3">
+              <h3 className="text-sm font-medium text-gray-900">Mailchimp</h3>
+              <p className="text-sm text-gray-600">Sync contacts and manage email campaigns</p>
             </div>
           </div>
           <div className="flex items-center">
@@ -264,21 +264,21 @@ const Settings = () => {
               type="checkbox"
               checked={formData.integration.mailchimp}
               onChange={handleInputChange}
-              className="h-5 w-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300"
+              className="h-4 w-4 text-blue-600 rounded focus:ring-blue-500 border-gray-300"
             />
           </div>
         </div>
 
-        <div className="flex items-center justify-between p-6 bg-gradient-to-r from-white to-gray-50 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200">
+        <div className="flex items-center justify-between p-4 bg-white rounded-md border border-gray-200">
           <div className="flex items-center">
-            <div className="flex-shrink-0 h-12 w-12">
-              <div className="h-12 w-12 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
-                <span className="text-blue-800 font-bold text-lg">S</span>
+            <div className="flex-shrink-0 h-8 w-8">
+              <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center">
+                <span className="text-blue-800 text-xs font-medium">S</span>
               </div>
             </div>
-            <div className="ml-4">
-              <h3 className="text-lg font-bold text-gray-900">Salesforce</h3>
-              <p className="text-gray-600">Sync with your Salesforce CRM</p>
+            <div className="ml-3">
+              <h3 className="text-sm font-medium text-gray-900">Salesforce</h3>
+              <p className="text-sm text-gray-600">Sync with your Salesforce CRM</p>
             </div>
           </div>
           <div className="flex items-center">
@@ -288,21 +288,21 @@ const Settings = () => {
               type="checkbox"
               checked={formData.integration.salesforce}
               onChange={handleInputChange}
-              className="h-5 w-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300"
+              className="h-4 w-4 text-blue-600 rounded focus:ring-blue-500 border-gray-300"
             />
           </div>
         </div>
 
-        <div className="flex items-center justify-between p-6 bg-gradient-to-r from-white to-gray-50 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200">
+        <div className="flex items-center justify-between p-4 bg-white rounded-md border border-gray-200">
           <div className="flex items-center">
-            <div className="flex-shrink-0 h-12 w-12">
-              <div className="h-12 w-12 rounded-full bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center">
-                <span className="text-purple-800 font-bold text-lg">H</span>
+            <div className="flex-shrink-0 h-8 w-8">
+              <div className="h-8 w-8 rounded-full bg-purple-100 flex items-center justify-center">
+                <span className="text-purple-800 text-xs font-medium">H</span>
               </div>
             </div>
-            <div className="ml-4">
-              <h3 className="text-lg font-bold text-gray-900">HubSpot</h3>
-              <p className="text-gray-600">Sync with your HubSpot CRM</p>
+            <div className="ml-3">
+              <h3 className="text-sm font-medium text-gray-900">HubSpot</h3>
+              <p className="text-sm text-gray-600">Sync with your HubSpot CRM</p>
             </div>
           </div>
           <div className="flex items-center">
@@ -312,7 +312,7 @@ const Settings = () => {
               type="checkbox"
               checked={formData.integration.hubspot}
               onChange={handleInputChange}
-              className="h-5 w-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300"
+              className="h-4 w-4 text-blue-600 rounded focus:ring-blue-500 border-gray-300"
             />
           </div>
         </div>
@@ -334,20 +334,20 @@ const Settings = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
-      <div className="mb-10">
-        <h1 className="text-3xl font-bold text-gray-900">Settings</h1>
-        <p className="mt-2 text-lg text-gray-600">Manage your CRM settings and preferences</p>
+    <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div className="mb-4">
+        <h1 className="text-lg font-semibold text-gray-900">Settings</h1>
+        <p className="text-sm text-gray-600 mt-1">Manage your CRM settings and preferences</p>
       </div>
 
-      <div className="card-glow bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg border border-gray-100 overflow-hidden">
-        <div className="border-b border-gray-100">
-          <nav className="flex flex-wrap -mb-px">
+      <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+        <div className="border-b border-gray-200">
+          <nav className="flex -mb-px">
             <button
               onClick={() => setActiveTab('general')}
-              className={`py-5 px-8 text-center border-b-2 font-semibold text-base transition-all duration-300 ${
+              className={`py-3 px-4 text-center border-b-2 font-medium text-sm ${
                 activeTab === 'general'
-                  ? 'border-blue-500 text-blue-600 bg-blue-50'
+                  ? 'border-blue-500 text-blue-600'
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
               }`}
             >
@@ -355,9 +355,9 @@ const Settings = () => {
             </button>
             <button
               onClick={() => setActiveTab('notifications')}
-              className={`py-5 px-8 text-center border-b-2 font-semibold text-base transition-all duration-300 ${
+              className={`py-3 px-4 text-center border-b-2 font-medium text-sm ${
                 activeTab === 'notifications'
-                  ? 'border-blue-500 text-blue-600 bg-blue-50'
+                  ? 'border-blue-500 text-blue-600'
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
               }`}
             >
@@ -365,9 +365,9 @@ const Settings = () => {
             </button>
             <button
               onClick={() => setActiveTab('integrations')}
-              className={`py-5 px-8 text-center border-b-2 font-semibold text-base transition-all duration-300 ${
+              className={`py-3 px-4 text-center border-b-2 font-medium text-sm ${
                 activeTab === 'integrations'
-                  ? 'border-blue-500 text-blue-600 bg-blue-50'
+                  ? 'border-blue-500 text-blue-600'
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
               }`}
             >
@@ -376,19 +376,19 @@ const Settings = () => {
           </nav>
         </div>
 
-        <form onSubmit={handleSubmit} className="p-8">
+        <form onSubmit={handleSubmit} className="p-6">
           {renderTabContent()}
 
-          <div className="mt-12 flex justify-end space-x-4">
+          <div className="mt-8 flex justify-end space-x-3">
             <button
               type="button"
-              className="bg-gradient-to-br from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-800 py-3 px-6 rounded-lg text-sm font-semibold border border-gray-200 transition-all duration-300 transform hover:scale-[1.02]"
+              className="bg-gray-200 text-gray-800 px-3 py-1.5 text-sm rounded-md font-medium hover:bg-gray-300 transition-colors duration-150"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="btn-primary text-white py-3 px-6 rounded-lg text-sm font-semibold transition-all duration-300 transform hover:scale-[1.02]"
+              className="bg-blue-600 text-white px-3 py-1.5 text-sm rounded-md font-medium hover:bg-blue-700 transition-colors duration-150"
             >
               Save Settings
             </button>
